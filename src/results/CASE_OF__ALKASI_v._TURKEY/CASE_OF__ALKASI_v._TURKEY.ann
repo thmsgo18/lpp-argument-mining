@@ -1,0 +1,49 @@
+T1	Context 729 816	the applicant's grievances fall to be examined solely under Article 6 § 2 of the Convention
+T2	Context 1749 1841	the termination of the applicant's employment was directly related to the events leading to the criminal proceedings
+T3	Context 1841 1969	the labour court examined the criminal file and based its reasoning to a great extent on its contents
+T4	Option 1969 2059	a strong link between the criminal and labour proceedings existed
+T5	Option 2072 2141	Article 6 § 2 is applicable in the context of the labour proceedings at issue
+T6	Option 2155 2247	this complaint is not manifestly ill-founded within the meaning of Article 35 § 3 of the Convention
+T7	Option 2286 2310	declared admissible
+T8	Context 2340 2471	the nature of the labour court's task was to assess whether the termination of the applicant's employment had been justified
+T9	Context 2483 2601	the Bakırköy Labour Court, as a civil court not bound by the findings or result of the criminal proceedings, was at liberty to determine the dispute from a labour law perspective
+T10	Option 2614 2743	reach a different conclusion from the criminal courts by establishing independently the facts of the case with regard to the applicant's conduct
+T11	Context 2761 2912	exoneration from criminal responsibility does not, as such, preclude the establishment of civil or other forms of liability arising out of the same facts
+T12	Option 2961 3088	the national courts in the subsequent proceedings need to stay within the bounds of a civil forum and refrain from suggesting criminal characterization of the applicant's conduct
+T13	Option 3089 3196	Any statement or reasoning by a civil court calling into question the applicant's established innocence would be incompatible with the requirements of Article 6 § 2
+T14	Context 3218 3390	the Bakırköy Labour Court was empowered to make a fresh assessment of the facts, it based its reasoning to a large extent on the criminal file, and concluded that the applicant had indeed committed the offence of incitement
+T15	Context 3396 3468	she had been acquitted of the same offence by the criminal courts
+T16	Context 3469 3638	The statement imputing criminal liability to the applicant, in complete disregard of her acquittal in the criminal proceedings, went beyond the court's task of determining the justifiability of the decision to dismiss her
+T17	Option 3643 3711	cast doubt on the correctness of her acquittal
+T18	Option 3713 3803	the wording employed by the labour court ran contrary to the right guaranteed under Article 6 § 2
+T19	Context 3823 3997	the labour court not only disregarded the final acquittal and found that the applicant had committed the offence of incitement, but that in doing so it also relied on the self-incriminating statements given by the applicant to the police in the absence of her lawyer
+T20	Context 4247 4395	the labour court in its judgment referred to the fact that the applicant's employer had relied on the fact that the applicant had confessed to inciting M.G. into committing the crime
+T21	Context 4401 4474	the labour court explicitly stated that it had examined the entire criminal investigation file
+T22	Option 4502 4590	the statements given by the applicant to the police without the assistance of a lawyer were relied on by the labour court
+T23	Option 4592 4692	reliance by a court on such statements in civil proceedings may raise an issue under Article 6 § 1 of the Convention
+T24	Option 4746 4858	the Court does not find it necessary to also assess if the labour court in reaching its conclusion relied on evidence in violation of the right to a fair trial
+T25	Marker 4858 4858	
+T26	Option 4873 4933	there has been a violation of Article 6 § 2 of the Convention
+T27	Context 5087 5185	the Court considers that it cannot speculate as to what the outcome of the proceedings would have been
+T28	Option 5237 5311	no award can be made in respect of the applicant's claim for pecuniary damages
+E1	rule:T4 Condition:T2 Condition:T3 Effect:T4
+E2	rule:T5 Condition:T4 Effect:T5
+E3	rule:T6 Condition:T5 Effect:T6
+E4	rule:T7 Condition:T6 Effect:T7
+E5	rule:T10 Condition:T8 Condition:T9 Effect:T10
+E6	rule:T12 Condition:T11 Effect:T12
+E7	rule:T13 Condition:T12 Effect:T13
+E8	rule:T17 Condition:T14 Condition:T15 Condition:T16 Effect:T17
+E9	rule:T18 Condition:T17 Effect:T18
+E10	rule:T22 Condition:T19 Condition:T20 Condition:T21 Effect:T22
+E11	rule:T23 Condition:T22 Effect:T23
+E12	rule:T24 Condition:T18 Effect:T24
+E13	rule:T26 Condition:T18 Effect:T26
+E14	rule:T28 Condition:T27 Effect:T28
+A1	Modality T5 obligatory
+A2	Modality T7 obligatory
+A3	Modality T10 permitted
+A4	Modality T12 obligatory
+A5	Modality T24 obligatory
+A6	Modality T26 obligatory
+A7	Modality T28 obligatory

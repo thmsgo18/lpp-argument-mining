@@ -1,0 +1,198 @@
+digraph LPP {
+  label="CASE OF  ALKASI v. TURKEY";
+  labelloc=t;
+  labeljust=l;
+  fontname="Helvetica-Bold";
+  fontsize=16;
+  graph [rankdir=LR, bgcolor=white, pad=0.8,
+         nodesep=0.55, ranksep=1.2, splines=ortho];
+  node  [fontname=Helvetica, fontsize=10, margin="0.12,0.08"];
+  edge  [fontname=Helvetica, fontsize=9];
+
+  // ── Level clusters ───────────────────────────────────────────
+  subgraph cluster_l0 {
+    label="Level 0 — Object rules";
+    fontsize=11; fontname=Helvetica;
+    style=dashed; color="#aaaaaa"; fillcolor="#fdfdf0";
+    c10 [label="c10\\nthe labour court not only disregarded\\nthe final acquittal and found that the\\napplicant had committed the offence of\\nincitement, but that in doing so it\\nalso relied on the self-incriminating\\nstatements given by the applicant to\\nthe police in the absence of her\\nlawyer", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c11 [label="c11\\nthe labour court in its judgment\\nreferred to the fact that the\\napplicant's employer had relied on the\\nfact that the applicant had confessed\\nto inciting M.G. into committing the\\ncrime", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c12 [label="c12\\nthe labour court explicitly stated\\nthat it had examined the entire\\ncriminal investigation file", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c13 [label="c13\\nthe Court considers that it cannot\\nspeculate as to what the outcome of\\nthe proceedings would have been", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c2 [label="c2\\nthe termination of the applicant's\\nemployment was directly related to the\\nevents leading to the criminal\\nproceedings", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c3 [label="c3\\nthe labour court examined the criminal\\nfile and based its reasoning to a\\ngreat extent on its contents", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c4 [label="c4\\nthe nature of the labour court's task\\nwas to assess whether the termination\\nof the applicant's employment had been\\njustified", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c5 [label="c5\\nthe Bakırköy Labour Court, as a civil\\ncourt not bound by the findings or\\nresult of the criminal proceedings,\\nwas at liberty to determine the\\ndispute from a labour law perspective", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c6 [label="c6\\nexoneration from criminal\\nresponsibility does not, as such,\\npreclude the establishment of civil or\\nother forms of liability arising out\\nof the same facts", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c7 [label="c7\\nthe Bakırköy Labour Court was\\nempowered to make a fresh assessment\\nof the facts, it based its reasoning\\nto a large extent on the criminal\\nfile, and concluded that the applicant\\nhad indeed committed the offence of\\nincitement", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c8 [label="c8\\nshe had been acquitted of the same\\noffence by the criminal courts", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    c9 [label="c9\\nThe statement imputing criminal\\nliability to the applicant, in\\ncomplete disregard of her acquittal in\\nthe criminal proceedings, went beyond\\nthe court's task of determining the\\njustifiability of the decision to\\ndismiss her", shape=box, style="filled,rounded", fillcolor="#ddeeff", penwidth=1.2];
+    o1 [label="o1\\na strong link between the criminal and\\nlabour proceedings existed", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o10 [label="o10\\nthe statements given by the applicant\\nto the police without the assistance\\nof a lawyer were relied on by the\\nlabour court", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o11 [label="o11\\nreliance by a court on such statements\\nin civil proceedings may raise an\\nissue under Article 6 § 1 of the\\nConvention", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o12 [label="o12\\nthe Court does not find it necessary\\nto also assess if the labour court in\\nreaching its conclusion relied on\\nevidence in violation of the right to\\na fair trial  [obligatory]", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o13 [label="o13\\nthere has been a violation of Article\\n6 § 2 of the Convention  [obligatory]", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o14 [label="o14\\nno award can be made in respect of the\\napplicant's claim for pecuniary\\ndamages  [obligatory]", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o2 [label="o2\\nArticle 6 § 2 is applicable in the\\ncontext of the labour proceedings at\\nissue  [obligatory]", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o3 [label="o3\\nthis complaint is not manifestly ill-\\nfounded within the meaning of Article\\n35 § 3 of the Convention", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o4 [label="o4\\ndeclared admissible  [obligatory]", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o5 [label="o5\\nreach a different conclusion from the\\ncriminal courts by establishing\\nindependently the facts of the case\\nwith regard to the applicant's conduct  [permitted]", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o6 [label="o6\\nthe national courts in the subsequent\\nproceedings need to stay within the\\nbounds of a civil forum and refrain\\nfrom suggesting criminal\\ncharacterization of the applicant's\\nconduct  [obligatory]", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o7 [label="o7\\nAny statement or reasoning by a civil\\ncourt calling into question the\\napplicant's established innocence\\nwould be incompatible with the\\nrequirements of Article 6 § 2", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o8 [label="o8\\ncast doubt on the correctness of her\\nacquittal", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    o9 [label="o9\\nthe wording employed by the labour\\ncourt ran contrary to the right\\nguaranteed under Article 6 § 2", shape=box, style="filled", fillcolor="#d5f5e3", penwidth=1.2];
+    r1 [label="r1", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r10 [label="r10", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r11 [label="r11", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r12 [label="r12\\n[obligatory]", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r13 [label="r13\\n[obligatory]", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r14 [label="r14\\n[obligatory]", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r2 [label="r2\\n[obligatory]", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r3 [label="r3", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r4 [label="r4\\n[obligatory]", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r5 [label="r5\\n[permitted]", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r6 [label="r6\\n[obligatory]", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r7 [label="r7", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r8 [label="r8", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+    r9 [label="r9", shape=ellipse, style="filled", fillcolor="#fff9c4", penwidth=1.2];
+  }
+
+  subgraph cluster_l1 {
+    label="Level 1 — Preferences";
+    fontsize=11; fontname=Helvetica;
+    style=dashed; color="#9b59b6"; fillcolor="#fdf5ff";
+  }
+
+  subgraph cluster_l2 {
+    label="Level 2 — Meta-preferences";
+    fontsize=11; fontname=Helvetica;
+    style=dashed; color="#6c3483"; fillcolor="#f5eeff";
+  }
+
+
+  // ── Arêtes ──────────────────────────────────────────────
+  r1 -> o1 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  c2 -> r1 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  c3 -> r1 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r2 -> o2 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  o1 -> r2 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r3 -> o3 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  o2 -> r3 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r4 -> o4 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  o3 -> r4 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r5 -> o5 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  c4 -> r5 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  c5 -> r5 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r6 -> o6 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  c6 -> r6 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r7 -> o7 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  o6 -> r7 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r8 -> o8 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  c7 -> r8 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  c8 -> r8 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  c9 -> r8 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r9 -> o9 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  o8 -> r9 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r10 -> o10 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  c10 -> r10 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  c11 -> r10 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  c12 -> r10 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r11 -> o11 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  o10 -> r11 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r12 -> o12 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  o9 -> r12 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r13 -> o13 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  o9 -> r13 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+  r14 -> o14 [label="effect", color="#1a7a40", style=solid, arrowhead=normal, penwidth=1.3];
+  c13 -> r14 [label="condition", color="#2e86c1", style=solid, arrowhead=normal, penwidth=1.3];
+
+  subgraph cluster_legend {
+    label="Légende LPP/GORGIAS";
+    fontsize=13;
+    fontname="Helvetica-Bold";
+    style="rounded,filled";
+    fillcolor="#fafafa";
+    color="#999999";
+    margin=18;
+
+    subgraph cluster_leg_levels {
+      label="Niveaux LPP";
+      fontsize=11;
+      fontname=Helvetica;
+      style=rounded;
+      color="#cccccc";
+      margin=12;
+
+      leg_ctx  [label="c1\nContext\n(condition)",
+                shape=box, style="rounded,filled",
+                fillcolor="#ddeeff", fontsize=9, fontname=Helvetica, width=1.5];
+      leg_opt  [label="o1\nOption\n(conclusion)",
+                shape=box, style="filled",
+                fillcolor="#d5f5e3", fontsize=9, fontname=Helvetica, width=1.5];
+      leg_rule [label="r1\nrule\n(Level 0)",
+                shape=ellipse, style="filled",
+                fillcolor="#fff9c4", fontsize=9, fontname=Helvetica, width=1.5];
+      leg_pref [label="pr1\nprefer\n(Level 1)",
+                shape=diamond, style="filled",
+                fillcolor="#ead1f5", fontsize=9, fontname=Helvetica, width=1.5];
+      leg_meta [label="pp1\nmeta_prefer\n(Level 2)",
+                shape=diamond, style="filled",
+                fillcolor="#d2b4de", fontsize=9, fontname=Helvetica, width=1.5];
+      leg_ctx -> leg_opt -> leg_rule -> leg_pref -> leg_meta [style=invis];
+    }
+
+    subgraph cluster_leg_edges {
+      label="Types d'arêtes";
+      fontsize=11;
+      fontname=Helvetica;
+      style=rounded;
+      color="#cccccc";
+      margin=12;
+
+      le_s1 [label="", shape=none, width=0.01, height=0.01];
+      le_d1 [label="", shape=none, width=0.01, height=0.01];
+      le_s2 [label="", shape=none, width=0.01, height=0.01];
+      le_d2 [label="", shape=none, width=0.01, height=0.01];
+      le_s3 [label="", shape=none, width=0.01, height=0.01];
+      le_d3 [label="", shape=none, width=0.01, height=0.01];
+      le_s4 [label="", shape=none, width=0.01, height=0.01];
+      le_d4 [label="", shape=none, width=0.01, height=0.01];
+      le_s5 [label="", shape=none, width=0.01, height=0.01];
+      le_d5 [label="", shape=none, width=0.01, height=0.01];
+
+      le_s1 -> le_d1 [label="condition", style=solid,  color="#2e86c1",
+                       fontsize=9, fontname=Helvetica, arrowhead=normal];
+      le_s2 -> le_d2 [label="effect",    style=solid,  color="#1a7a40",
+                       fontsize=9, fontname=Helvetica, arrowhead=normal];
+      le_s3 -> le_d3 [label="winner",    style=dashed, color="#7d3c98",
+                       fontsize=9, fontname=Helvetica, arrowhead=open];
+      le_s4 -> le_d4 [label="loser",     style=dashed, color="#c0392b",
+                       fontsize=9, fontname=Helvetica, arrowhead=open];
+      le_s5 -> le_d5 [label="when",      style=dotted, color="#e67e22",
+                       fontsize=9, fontname=Helvetica, arrowhead=normal];
+
+      le_s1 -> le_s2 -> le_s3 -> le_s4 -> le_s5 [style=invis];
+      le_d1 -> le_d2 -> le_d3 -> le_d4 -> le_d5 [style=invis];
+    }
+
+    subgraph cluster_leg_attrs {
+      label="Attributs";
+      fontsize=11;
+      fontname=Helvetica;
+      style=rounded;
+      color="#cccccc";
+      margin=12;
+
+      la1 [label="[implicit]\nCondition inventée\n(non présente dans\nle texte source)",
+           shape=note, style=filled, fillcolor="#fff3cd",
+           fontsize=8, fontname=Helvetica, width=1.8];
+      la2 [label="[negated]\nProposition\nsémantiquement\nniée",
+           shape=note, style=filled, fillcolor="#fde8e8",
+           fontsize=8, fontname=Helvetica, width=1.8];
+      la3 [label="[obligatory]\n[permitted]\n[recommended]\n[default]\nModalité déontique\nde l'Option",
+           shape=note, style=filled, fillcolor="#e8f8e8",
+           fontsize=8, fontname=Helvetica, width=1.8];
+      la1 -> la2 -> la3 [style=invis];
+    }
+  }
+
+}

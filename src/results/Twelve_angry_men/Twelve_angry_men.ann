@@ -1,0 +1,110 @@
+T1	Option 10 49	I never saw a guiltier man in my life
+T2	Context 56 91	What does a guilty man look like
+T3	Option 93 143	He is not guilty until we say he is guilty
+T4	Context 145 168	Are we to vote on his face
+T5	Context 170 240	You sat right in court and heard the same things I did
+T6	Option 245 268	The man's a dangerous killer
+T7	Context 270 285	You could see it
+T8	Context 341 357	He's nineteen years old
+T9	Option 365 397	That's old enough
+T10	Context 399 422	He knifed his own father
+T11	Context 424 447	Four inches into the chest
+T12	Option 452 504	I agree with you that the boy is guilty
+T13	Option 519 560	we should try to avoid emotionally colored arguments
+T14	Context 572 610	They proved it a dozen different ways
+T15	Option 643 673	do you believe that stupid story he told
+T16	Option 718 748	I don't know whether I believe it or not
+T17	Context 769 800	there were eleven votes for guilty
+T18	Option 805 893	it's not so easy for me to raise my hand and send a boy off to die without talking about it first
+T19	Option 939 999	He's still just as guilty, whether it's an easy vote or a hard vote
+T20	Context 1058 1104	this boy's been kicked around all his life
+T21	Context 1105 1151	living in a slum his mother dead since he was nine
+T22	Context 1152 1183	He's a tough, angry kid
+T23	Context 1184 1256	we knock'em over the head once a day, every day
+T24	Option 1257 1290	I think maybe we owe him a few words
+T25	Context 1329 1361	Everything I've got I fought for
+T26	Context 1362 1397	I worked my way through college
+T27	Option 1449 1464	I never killed
+T28	Option 1471 1494	I never killed nobody
+T29	Context 1496 1562	I've been kicked around, too. Wait until you've worked in an ad agency
+T30	Option 1635 1668	let's try to find something better than that
+T31	Context 1683 1712	We don't owe the kid a thing
+T32	Context 1713 1736	He got a fair trial, didn't he
+T33	Option 1831 1907	You're not going to tell us that we're supposed to believe him, knowing what he is
+T34	Context 1908 1946	I've lived among'em all my life
+T35	Option 1947 1980	You can't believe a word they say
+T36	Option 1996 2039	Since when is dishonesty a group characteristic
+T37	Option 2041 2075	You have no monopoly on the truth
+T38	Option 2110 2139	What this man says is very dangerous
+T39	Context 2155 2204	I don't see any need for arguing like this
+T40	Option 2205 2246	I think we ought to be able to behave like gentlemen
+T41	Option 2305 2341	If we're going to discuss this case, let's discuss the facts
+T42	Context 2373 2428	I'm going to close the window. It was blowing on my neck
+T43	Option 2435 2471	I'd like to have the window open
+T44	Context 2487 2497	it's summer
+T45	Context 2498 2506	it's hot
+T46	Option 2536 2573	There are twelve of us in this room; it's the only window
+T47	Option 2617 2676	it's up to us to convince this gentleman that we're right and he's wrong
+T48	Context 2764 2788	nobody proved otherwise
+T49	Option 2791 2853	Nobody has to prove otherwise; innocent until proven guilty
+T50	Context 2854 2905	The burden of proof is on the prosecution
+T51	Option 2906 2951	The defendant doesn't have to open his mouth
+T52	Context 2952 2984	That's in the Constitution. The Fifth Amendment
+T53	Option 3013 3044	No reasons just guilty. There is a life at stake here
+T54	Context 3079 3229	the old man who lived on the second floor right underneath the room where the murder took place heard loud noises in the upstairs apartment
+T55	Context 3230 3280	he heard the kid say to his father, "I'm gonna kill you"
+T56	Context 3281 3345	he heard a body falling, and he ran to the door of his apartment, looked out and saw the kid running downstairs
+T57	Context 3349 3388	They found the father with a knife in his chest
+T58	Option 3392 3443	the coroner fixed the time of death at around midnight
+T59	Context 3499 3556	The boy's entire story is flimsy. He claimed he was at the movies
+T60	Context 3557 3597	He couldn't even remember what picture he saw
+T61	Context 3633 3659	He didn't have any ticket stub
+T62	Context 3695 3727	the cashier didn't remember him
+T63	Context 3749 3776	the ticket taker didn't, either
+T64	Context 3801 3900	a woman who's lying in bed and can't sleep wakes up and sees the kid stick the knife into his father
+T65	Option 3915 3990	How can she really be sure it was the kid when she saw it through the windows of a passing elevated train
+T66	Context 3991 4050	She's known the kid all his life. His window is right opposite hers
+T67	Context 4051 4083	she swore she saw him do it
+T68	Option 4121 4202	they proved in court that you can look through the windows of a passing el train at night, and see what's happening on the other side
+T69	Context 4204 4259	you can't trust them. You can't believe them
+T70	Option 4270 4305	How come you believed her? She's one of them, too
+T71	Marker 4204 4230	you can't trust them
+T72	Context 4425 4494	we looked through the windows of a passing el train
+T73	Option 4500 4547	weren't you able to see what happened on the other side
+T74	Option 4569 4641	I didn't see as well as they told me I would see, but I did see what happened on the other side
+
+E1	rule:T1 Condition:T5 Effect:T1
+E2	rule:T3 Condition:T2 Condition:T4 Effect:T3
+E3	rule:T6 Condition:T5 Condition:T7 Effect:T6
+E4	rule:T9 Condition:T10 Condition:T11 Effect:T9
+E5	rule:T12 Condition:T8 Condition:T10 Effect:T12
+E6	rule:T13 Condition:T12 Effect:T13
+E7	rule:T24 Condition:T20 Condition:T21 Condition:T22 Condition:T23 Effect:T24
+E8	rule:T27 Condition:T25 Condition:T26 Effect:T27
+E9	rule:T35 Condition:T34 Effect:T35
+E10	rule:T36 Condition:T35 Effect:T36
+E11	rule:T37 Condition:T36 Effect:T37
+E12	rule:T38 Condition:T35 Effect:T38
+E13	rule:T40 Condition:T39 Effect:T40
+E14	rule:T41 Condition:T40 Effect:T41
+E15	rule:T49 Condition:T50 Effect:T49
+E16	rule:T51 Condition:T52 Effect:T51
+E17	rule:T68 Condition:T64 Condition:T66 Condition:T67 Effect:T68
+E18	rule:T65 Condition:T64 Effect:T65
+E19	rule:T70 Condition:T69 Condition:T68 Effect:T70
+E20	rule:T74 Condition:T72 Effect:T74
+
+E21	prefer:T71 Winner:E2 Loser:E9 When:T69
+
+A1	Modality T3 obligatory
+A2	Modality T13 recommended
+A3	Modality T18 permitted
+A4	Modality T24 recommended
+A5	Modality T30 recommended
+A6	Modality T40 recommended
+A7	Modality T41 recommended
+A8	Modality T51 obligatory
+A9	Negated T3 True
+A10	Negated T27 True
+A11	Negated T28 True
+A12	Negated T65 True
