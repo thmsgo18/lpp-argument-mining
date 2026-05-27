@@ -52,10 +52,10 @@ L'enjeu de ce TER est de construire un pont entre les corpus d'argument mining e
 
 | Laboratoire | Institution | Equipe |
 |-------------|-------------|--------|
-| [LIPADE](https://lipade.mi.parisdescartes.fr) | Université Paris Cité | É. Bonzon, J. Delobelle, P. Moraitis, J. Rossit |
-| [LLF](https://www.llf.cnrs.fr) | CNRS / Université Paris Cité | T. Bernard, B. Crabbé |
-| [IRIT](https://www.irit.fr) | Université Toulouse III | C. Braud, J.-G. Mailly, P. Muller |
-| [Bar-Ilan University](https://www.biu.ac.il) | Israël | O. Shehory |
+| LIPADE | Université Paris Cité | É. Bonzon, J. Delobelle, P. Moraitis, J. Rossit |
+| LLF | CNRS / Université Paris Cité | T. Bernard, B. Crabbé |
+| IRIT | Université Toulouse III | C. Braud, J.-G. Mailly, P. Muller |
+| Bar-Ilan University | Israël | O. Shehory |
 
 ---
 

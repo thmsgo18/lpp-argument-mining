@@ -52,10 +52,10 @@ The objective of this Research Study and Work (TER) is to build a bridge between
 
 | Laboratory | Institution | Team |
 |------------|-------------|------|
-| [LIPADE](https://lipade.mi.parisdescartes.fr) | Université Paris Cité | É. Bonzon, J. Delobelle, P. Moraitis, J. Rossit |
-| [LLF](https://www.llf.cnrs.fr) | CNRS / Université Paris Cité | T. Bernard, B. Crabbé |
-| [IRIT](https://www.irit.fr) | Université Toulouse III | C. Braud, J.-G. Mailly, P. Muller |
-| [Bar-Ilan University](https://www.biu.ac.il) | Israel | O. Shehory |
+| LIPADE | Université Paris Cité | É. Bonzon, J. Delobelle, P. Moraitis, J. Rossit |
+| LLF | CNRS / Université Paris Cité | T. Bernard, B. Crabbé |
+| IRIT | Université Toulouse III | C. Braud, J.-G. Mailly, P. Muller |
+| Bar-Ilan University | Israel | O. Shehory |
 
 ---
 
