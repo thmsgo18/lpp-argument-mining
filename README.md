@@ -1,259 +1,293 @@
 <div align="center">
 
-<h1>Analyse de Corpus Argumentatifs pour la Construction de Graphes LPP/GORGIAS</h1>
+<h1>Analysis of Annotated Text Corpora for the Construction of LPP Argumentation Graphs</h1>
 
 ![Python](https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white)
-![Graphviz](https://img.shields.io/badge/Graphviz-requis-E67E22)
+![Graphviz](https://img.shields.io/badge/Graphviz-required-E67E22)
 ![Format](https://img.shields.io/badge/Format-brat%20.ann-6C3483)
-![ANR GRAIL](https://img.shields.io/badge/ANR-GRAIL%20ANR--25--CE23--5597-2E86C1)
+[![ANR GRAIL](https://img.shields.io/badge/ANR-GRAIL%20ANR--25--CE23--5597-2E86C1)](https://grail.mi.parisdescartes.fr)
 
-Master 1 Intelligence Artificielle Distribuée · Université Paris Cité · 2025-2026
+![Argument Mining](https://img.shields.io/badge/Argument%20Mining-555555)
+![LPP%2FGORGIAS](https://img.shields.io/badge/LPP%2FGORGIAS-555555)
+![Prompt Engineering](https://img.shields.io/badge/Prompt%20Engineering-555555)
+![NLP](https://img.shields.io/badge/NLP-555555)
+![Symbolic AI](https://img.shields.io/badge/Symbolic%20AI-555555)
 
-**Auteurs :** Thomas Gourmelen, Noureddine Mohammedi  
-**Encadrants :** Élise Bonzon, Jérôme Delobelle
+[Master 1 Distributed Artificial Intelligence](https://math-info.u-paris.fr/international-masters-distributed-artificial-intelligence-dai-agent-based-computing/) · Université Paris Cité · 2025-2026
+
+**Authors:** [Thomas Gourmelen](https://github.com/thmsgo18), [Noureddine Mohammedi](https://github.com/Mr-Noredine)  
+**Supervisors:** Élise Bonzon, Jérôme Delobelle
+
+[Version française](README.fr.md)
 
 </div>
 
 ---
 
-<h2>Table des matières</h2>
+<h2>Table of Contents</h2>
 
-- [1. Présentation du projet](#1-présentation-du-projet)
-- [2. État de l'art](#2-état-de-lart)
-  - [2.1 Argumentation computationnelle](#21-argumentation-computationnelle)
-  - [2.2 LPP/GORGIAS](#22-lppgorgias)
-  - [2.3 Le format brat](#23-le-format-brat)
-  - [2.4 Argument mining et ses limites](#24-argument-mining-et-ses-limites)
-- [3. Problématique et objectifs](#3-problématique-et-objectifs)
-- [4. Structure du dépôt](#4-structure-du-dépôt)
-- [5. Composants](#5-composants)
-  - [5.1 Prompt d'annotation](#51-prompt-dannotation)
-  - [5.2 Script de visualisation](#52-script-de-visualisation)
-- [6. Résultats](#6-résultats)
-- [7. Documents associés](#7-documents-associés)
-
----
-
-## 1. Présentation du projet
-
-Ce dépôt s'inscrit dans le projet ANR **GRAIL** (*Generative aRgumentative ArtificiAl InteLligence*), porté par le LIPADE, le LLF et l'IRIT. L'objectif de GRAIL est de développer des agents neuro-symboliques capables de justifier leur raisonnement de manière explicite via le formalisme **LPP/GORGIAS**.
-
-L'enjeu de ce TER est de construire un pont entre les corpus d'argument mining existants et ce formalisme, en automatisant la transition grâce à un modèle de langue large (Claude).
+- [1. Project Overview](#1-project-overview)
+- [2. Repository Structure](#2-repository-structure)
+- [3. Related Work](#3-related-work)
+  - [3.1 Formal Argumentation and Computational Frameworks](#31-formal-argumentation-and-computational-frameworks)
+  - [3.2 LPP/GORGIAS](#32-lppgorgias)
+  - [3.3 The brat Format](#33-the-brat-format)
+- [4. Research Question and Objectives](#4-research-question-and-objectives)
+- [5. Components](#5-components)
+  - [5.1 Annotation Prompt](#51-annotation-prompt)
+  - [5.2 Visualization Script](#52-visualization-script)
+- [6. Results](#6-results)
+- [7. Associated Documents](#7-associated-documents)
+- [8. Main References](#8-main-references)
 
 ---
 
-## 2. État de l'art
+## 1. Project Overview
 
-### 2.1 Argumentation computationnelle
+This repository is part of the ANR **[GRAIL](https://grail.mi.parisdescartes.fr)** project (*Generative aRgumentative ArtificiAl InteLligence*, ANR-25-CE23-5597). GRAIL aims to develop neuro-symbolic AI agents capable of explicitly justifying their reasoning through the **LPP/GORGIAS** formalism.
 
-L'argumentation computationnelle modélise des systèmes où des arguments construits à partir de prémisses peuvent se soutenir ou s'attaquer. Le cadre de **Dung (1995)** est le fondement du domaine : il représente un système comme une paire *(Args, Att)* et définit des sémantiques d'acceptabilité (admissible, préférée, stable), mais reste abstrait sur la structure interne des arguments. **ASPIC+** introduit des règles strictes et défaisables et rapproche ce cadre d'une logique exploitable, sans pour autant constituer un schéma d'annotation textuelle.
+The objective of this Research Study and Work (TER) is to build a bridge between existing argument mining corpora and this formalism, automating the transition using a large language model (Claude).
 
-### 2.2 LPP/GORGIAS
+**Partner laboratories:**
 
-> **LPP** (*Logic Programming with Priorities*) est un formalisme d'argumentation structurée développé par Kakas, Moraitis et Spanoudakis. **GORGIAS** en est l'implémentation open source (disponible depuis 2003).
+| Laboratory | Institution | Team |
+|------------|-------------|------|
+| [LIPADE](https://lipade.mi.parisdescartes.fr) | Université Paris Cité | É. Bonzon, J. Delobelle, P. Moraitis, J. Rossit |
+| [LLF](https://www.llf.cnrs.fr) | CNRS / Université Paris Cité | T. Bernard, B. Crabbé |
+| [IRIT](https://www.irit.fr) | Université Toulouse III | C. Braud, J.-G. Mailly, P. Muller |
+| [Bar-Ilan University](https://www.biu.ac.il) | Israel | O. Shehory |
 
-LPP organise tout raisonnement en **trois niveaux hiérarchiques stricts** :
+---
+
+## 2. Repository Structure
+
+```
+lpp-argument-mining/
+├── src/
+│   ├── prompt-claude.txt                        # LPP/GORGIAS annotation prompt
+│   ├── ann_to_graph.py                          # Visualization script (.ann -> .png)
+│   └── results/
+│       ├── CASE_OF__ALKASI_v._TURKEY/
+│       │   ├── CASE_OF__ALKASI_v._TURKEY.txt    # Source text
+│       │   ├── CASE_OF__ALKASI_v._TURKEY.ann    # Generated LPP annotation
+│       │   ├── CASE_OF__ALKASI_v._TURKEY.dot    # Intermediate Graphviz source
+│       │   └── CASE_OF__ALKASI_v._TURKEY.png    # Visualized LPP graph
+│       └── Twelve_angry_men/
+│           ├── Twelve_Angry_Men.txt             # Source text
+│           ├── Twelve_angry_men.ann             # Generated LPP annotation
+│           ├── Twelve_angry_men.dot             # Intermediate Graphviz source
+│           └── Twelve_angry_men.png             # Visualized LPP graph
+├── research_paper/
+│   ├── GORGIAS: Applying argumentation.pdf                            # Kakas et al., 2019
+│   └── Argumentation Based Decision Making for Autonomous Agents.pdf  # Kakas & Moraitis, 2003
+├── TER_Rapport.pdf                              # Full research report
+├── Presentation_TER.html                        # Interactive presentation (with effects)
+└── Presentation_TER.pdf                         # Static presentation (no effects)
+```
+
+---
+
+## 3. Related Work
+
+### 3.1 Formal Argumentation and Computational Frameworks
+
+Computational argumentation models reasoning in which arguments, built from premises and conclusions, can support or attack one another. **Dung's framework (1995)** is the foundation of the field, representing a system as a pair *(Args, Att)*, but remains abstract on the internal structure of arguments. **ASPIC+** introduces strict and defeasible rules, bringing this framework closer to an exploitable logical representation without constituting a textual annotation scheme.
+
+**Argument mining** deals with the extraction of these structures from natural texts: identifying components (**Claim**, **Premise**) and relations (**Support**, **Attack**). These corpora remain heterogeneous and insufficient to produce decision-making reasoning with explicit priorities — this is the contribution of LPP/GORGIAS.
+
+### 3.2 LPP/GORGIAS
+
+**LPP** (*Logic Programming with Priorities*) is a structured argumentation formalism developed by Kakas, Moraitis and Spanoudakis. **GORGIAS** is its open-source implementation (available since 2003). The formalism rests on the following formal definition:
+
+> **Definition 4** *(Kakas, Moraitis & Spanoudakis)* — *An agent's argumentative policy theory T is a triple* **T** = (*T*, *P*<sub>R</sub>, *P*<sub>C</sub>) *where the rules in T do not refer to h<sub>p</sub>, all the rules in P*<sub>R</sub> *are priority rules with head h<sub>p</sub>(r*<sub>1</sub>*, r*<sub>2</sub>*) s.t. r*<sub>1</sub>*, r*<sub>2</sub> *∈ T and all rules in P*<sub>C</sub> *are priority rules with head h<sub>p</sub>(R*<sub>1</sub>*, R*<sub>2</sub>*) s.t. R*<sub>1</sub>*, R*<sub>2</sub> *∈ P*<sub>R</sub> *∪ P*<sub>C</sub>*.*
+
+In this TER, we adapted this structure to argumentative text: *T* maps to `rule` (Level 0), *P*<sub>R</sub> to `prefer` (Level 1), and *P*<sub>C</sub> to `meta_prefer` (Level 2). The textual entities Context, Option and Marker constitute their annotatable translation in brat format.
+
+LPP organizes all reasoning into **three strict hierarchical levels**:
 
 ```
 ┌─────────────────────────────────────┐
 │  Level 2 : meta_prefer              │
-│  Priorités entre préférences        │
-└──────────────────┬──────────────────┘
-                   │ arbitre
-┌──────────────────▼──────────────────┐
+│  Priorities between preferences     │
+└─────────────────────────────────────┘
+                   ▲
+┌─────────────────────────────────────┐
 │  Level 1 : prefer                   │
-│  Priorités entre règles             │
-└──────────────────┬──────────────────┘
-                   │ arbitre
-┌──────────────────▼──────────────────┐
+│  Priorities between rules           │
+└─────────────────────────────────────┘
+                   ▲
+┌─────────────────────────────────────┐
 │  Level 0 : rule                     │
 │  Context(s)  ──►  Option            │
 └─────────────────────────────────────┘
 ```
 
-| Niveau | Primitive | Rôle |
-|:------:|-----------|------|
-| 0 | `rule` | Dériver une Option (conclusion) à partir d'un ou plusieurs Context (conditions) |
-| 1 | `prefer` | Exprimer qu'une `rule` l'emporte sur une autre dans un contexte donné |
-| 2 | `meta_prefer` | Exprimer qu'une `prefer` l'emporte sur une autre dans un contexte plus spécifique |
+| Level | Primitive | Role |
+|:-----:|-----------|------|
+| 0 | `rule` | Derive an Option (conclusion) from one or more Context (conditions) |
+| 1 | `prefer` | Express that one `rule` overrides another in a given context |
+| 2 | `meta_prefer` | Express that one `prefer` overrides another in a more specific context |
 
-**Entités textuelles :**
+**Textual entities:**
 
-| Entité | Définition |
+| Entity | Definition |
 |--------|------------|
-| **Context** | Fait, condition, circonstance ou posture procédurale alimentant une conclusion |
-| **Option** | Conclusion, décision, jugement ou alternative disponible |
-| **Marker** | Marqueur textuel explicite de priorité (*"takes precedence over"*, *"notwithstanding"*, *"overrides"*...) |
+| **Context** | Fact, condition, circumstance or procedural posture feeding a conclusion |
+| **Option** | Conclusion, decision, judgment or available alternative |
+| **Marker** | Explicit textual priority cue (*"takes precedence over"*, *"notwithstanding"*, *"overrides"*...) |
 
-La hiérarchie est stricte : un `prefer` porte toujours sur deux `rule`, un `meta_prefer` porte toujours sur deux `prefer` ou `meta_prefer`. Il n'y a pas de saut de niveau.
+The hierarchy is strict: a `prefer` always ranks two `rule` events, a `meta_prefer` always ranks two `prefer` or `meta_prefer` events. Level-skipping is not allowed.
 
-### 2.3 Le format brat
+### 3.3 The brat Format
 
-> **brat** (*brat rapid annotation tool*) est un outil d'annotation textuelle web développé à l'Université de Tokyo. Son format `.ann` est un standard de facto en TAL pour l'annotation de corpus.
+> **brat** (*brat rapid annotation tool*) is a web-based text annotation tool developed at the University of Tokyo. Its `.ann` file format is a de facto standard in NLP for corpus annotation.
 
-Un fichier `.ann` contient trois types de lignes :
+A `.ann` file contains three types of lines:
 
 ```
-# T-lines : entités textuelles  (identifiant  type  début  fin  texte)
+# T-lines: text-bound entities  (id  type  start  end  text)
 T1    Context   0   34    a person has been finally acquitted
 T2    Option   51  144    a civil court may still rule on property consequences
 
-# E-lines : événements          (identifiant  type:déclencheur  rôles)
+# E-lines: events               (id  type:trigger  roles)
 E1    rule:T2   Condition:T1   Effect:T2
 E21   prefer:T71   Winner:E2   Loser:E9   When:T69
 
-# A-lines : attributs           (identifiant  nom  cible  valeur)
+# A-lines: attributes           (id  name  target  value)
 A1    Modality   T2   permitted
 A2    Negated    T5   True
 ```
 
-Les offsets sont basés sur zéro, borne de fin exclusive. Le format est compatible avec plusieurs corpus d'argument mining existants, notamment ArgumentMiningECHR.
-
-### 2.4 Argument mining et ses limites
-
-L'argument mining extrait automatiquement des structures argumentatives (**Claim**, **Premise**, **Support**, **Attack**) depuis des textes naturels. Ces corpus sont hétérogènes et insuffisants pour LPP/GORGIAS :
-
-| Etiquette AM | Correspondance LPP | Limite |
-|---|---|---|
-| **Claim** | Option ? | Peut être une prémisse intermédiaire |
-| **Premise** | Context ? | Peut être la conclusion d'un argument précédent |
-| **Support** | `rule` ? | Ne spécifie pas Condition ni Effect |
-| **Attack** | `prefer` ? | Ne suffit pas sans marqueur de priorité explicite |
-
-La transition vers GORGIAS nécessite donc un schéma d'annotation dédié, travaillé directement sur le texte brut.
+Character offsets are zero-based, with an exclusive end boundary. The format is compatible with several existing argument mining corpora, notably ArgumentMiningECHR.
 
 ---
 
-## 3. Problématique et objectifs
+## 4. Research Question and Objectives
 
-**Question centrale :** comment guider la transition d'un texte argumentatif brut vers une représentation LPP compatible avec GORGIAS, et dans quelle mesure peut-on l'automatiser ?
+**Central question:** how can we guide the transition from a raw argumentative text to an LPP representation compatible with GORGIAS, and to what extent can this transition be automated?
 
-Cinq objectifs ont structuré les travaux :
+Five objectives structured the work:
 
-1. Analyser 17 corpus d'argument mining pour évaluer leur pertinence pour LPP.
-2. Définir des principes d'annotation permettant le passage des étiquettes classiques aux niveaux LPP.
-3. Construire un prompt opérationnel produisant une annotation brat (`.ann`) aux trois niveaux LPP.
-4. Evaluer ce prompt sur deux textes : un arrêt CEDH (juridique) et un extrait de *Douze Hommes en Colère* (délibératif).
-5. Identifier les limites de l'automatisation et les points exigeant une validation humaine.
-
----
-
-## 4. Structure du dépôt
-
-```
-lpp-argument-mining/
-├── src/
-│   ├── prompt-claude.txt                        # Prompt d'annotation LPP/GORGIAS
-│   ├── ann_to_graph.py                          # Script de visualisation (.ann -> .png)
-│   └── results/
-│       ├── CASE_OF__ALKASI_v._TURKEY/
-│       │   ├── CASE_OF__ALKASI_v._TURKEY.txt    # Texte source
-│       │   ├── CASE_OF__ALKASI_v._TURKEY.ann    # Annotation LPP générée
-│       │   ├── CASE_OF__ALKASI_v._TURKEY.dot    # Source Graphviz intermédiaire
-│       │   └── CASE_OF__ALKASI_v._TURKEY.png    # Graphe LPP visualisé
-│       └── Twelve_angry_men/
-│           ├── Twelve_Angry_Men.txt             # Texte source
-│           ├── Twelve_angry_men.ann             # Annotation LPP générée
-│           ├── Twelve_angry_men.dot             # Source Graphviz intermédiaire
-│           └── Twelve_angry_men.png             # Graphe LPP visualisé
-├── rapport.pdf                                  # Rapport de TER (a venir)
-└── presentation.pdf                             # Présentation de soutenance (a venir)
-```
+1. Analyze 17 argument mining corpora to evaluate their relevance for LPP.
+2. Define annotation principles enabling the transition from classical argument mining labels to LPP levels.
+3. Build an operational prompt producing a brat (`.ann`) annotation at all three LPP levels.
+4. Evaluate this prompt on two texts: an ECHR ruling (legal reasoning) and an excerpt from *Twelve Angry Men* (deliberative reasoning).
+5. Identify the limits of automation and the points requiring human validation.
 
 ---
 
-## 5. Composants
+## 5. Components
 
-### 5.1 Prompt d'annotation
+### 5.1 Annotation Prompt
 
-**Fichier :** `src/prompt-claude.txt`
+**File:** `src/prompt-claude.txt`
 
-Prompt rédigé en anglais pour maximiser les performances de Claude, applicable à tout texte argumentatif. Pour l'utiliser, remplacer la balise `<<<INPUT_TEXT>>>` en fin de fichier par le texte à annoter.
+Prompt written in English to maximize Claude's performance, applicable to any sufficiently explicit argumentative text. To use it, replace the `<<<INPUT_TEXT>>>` tag at the end of the file with the text to annotate.
 
-Le prompt est structuré en huit blocs : rappel LPP, schéma d'annotation, cas des textes à préférences, méthodologie pas-à-pas, erreurs à éviter, quatre exemples annotés, format de sortie strict, auto-vérification avant émission.
+The prompt is organized into eight blocks: LPP reminder, annotation schema, preference-ranking texts, step-by-step methodology, errors to avoid, four annotated examples, strict output format, pre-emission self-verification.
 
-**Format de sortie :**
+**Output format:**
 
 ```
-T<id>   Context | Option | Marker   <start> <end>   <texte exact>
+T<id>   Context | Option | Marker   <start> <end>   <exact span>
 E<id>   rule:T<id>          Condition:T<id> ...   Effect:T<id>
 E<id>   prefer:T<id>        Winner:E<id>          Loser:E<id>    [When:T<id>]
 E<id>   meta_prefer:T<id>   Winner:E<id>          Loser:E<id>    [When:T<id>]
-A<id>   Modality | Negated | Implicit   T<id>   <valeur>
+A<id>   Modality | Negated | Implicit   T<id>   <value>
 ```
 
 ---
 
-### 5.2 Script de visualisation
+### 5.2 Visualization Script
 
-**Fichier :** `src/ann_to_graph.py`
+**File:** `src/ann_to_graph.py`
 
-Convertit un fichier `.ann` en graphe PNG haute résolution via Graphviz. Parse les entités, reconstruit la hiérarchie LPP, génère le DOT intermédiaire, puis produit l'image.
+Converts a `.ann` file into a high-resolution PNG graph via Graphviz. Parses entities, reconstructs the LPP hierarchy, generates the intermediate DOT source, then produces the image.
 
-**Prérequis :** Python 3.8+ et [Graphviz](https://graphviz.org/download/) dans le `PATH`.
+**Requirements:** Python 3.8+ and [Graphviz](https://graphviz.org/download/) in the `PATH`.
 
 ```bash
-python src/ann_to_graph.py <fichier.ann>              # PNG par défaut
-python src/ann_to_graph.py <fichier.ann> -o out.png   # fichier de sortie
-python src/ann_to_graph.py <fichier.ann> --output dot # exporter le DOT
-python src/ann_to_graph.py <fichier.ann> --no-legend  # sans légende
-python src/ann_to_graph.py <fichier.ann> --dpi 300    # résolution personnalisée
+python src/ann_to_graph.py <file.ann>              # PNG output (default)
+python src/ann_to_graph.py <file.ann> -o out.png   # custom output file
+python src/ann_to_graph.py <file.ann> --output dot # export DOT source
+python src/ann_to_graph.py <file.ann> --no-legend  # without legend
+python src/ann_to_graph.py <file.ann> --dpi 300    # custom resolution
 ```
 
-**Conventions visuelles :**
+**Visual conventions:**
 
-| Element | Forme | Couleur | Niveau |
-|---------|:-----:|---------|:------:|
-| Context | Rectangle arrondi | Bleu clair | 0 |
-| Option | Rectangle | Vert clair | 0 |
-| `rule` | Ellipse | Jaune | 0 |
-| `prefer` | Losange | Violet clair | 1 |
-| `meta_prefer` | Losange | Violet foncé | 2 |
+| Element | Shape | Color | Level |
+|---------|:-----:|-------|:-----:|
+| Context | Rounded rectangle | Light blue | 0 |
+| Option | Rectangle | Light green | 0 |
+| `rule` | Ellipse | Yellow | 0 |
+| `prefer` | Diamond | Light purple | 1 |
+| `meta_prefer` | Diamond | Dark purple | 2 |
 
-| Arête | Style | Couleur |
-|-------|:-----:|---------|
-| condition | Trait plein | Bleu |
-| effect | Trait plein | Vert |
-| winner | Tirets | Violet |
-| loser | Tirets | Rouge |
-| when | Pointillés | Orange |
+| Edge | Style | Color |
+|------|:-----:|-------|
+| condition | Solid | Blue |
+| effect | Solid | Green |
+| winner | Dashed | Purple |
+| loser | Dashed | Red |
+| when | Dotted | Orange |
 
 ---
 
-## 6. Résultats
+## 6. Results
 
-Le prompt a été évalué sur deux textes complémentaires.
+The prompt was evaluated on two complementary texts.
 
 <table>
 <thead>
 <tr>
-<th>Critère</th>
-<th>Alkasi c. Turquie (CEDH)</th>
-<th>Douze Hommes en Colère</th>
+<th>Criterion</th>
+<th>Alkasi v. Turkey (ECHR)</th>
+<th>Twelve Angry Men</th>
 </tr>
 </thead>
 <tbody>
-<tr><td>Type de texte</td><td>Juridique formel</td><td>Délibératif multi-locuteurs</td></tr>
-<tr><td>Corpus source</td><td>ArgumentMiningECHR</td><td>NoDE_datasets</td></tr>
-<tr><td>Entités annotées</td><td>28 (13 Context, 14 Option, 1 Marker)</td><td>74 (40 Context, 33 Option, 1 Marker)</td></tr>
+<tr><td>Text type</td><td>Formal legal</td><td>Multi-speaker deliberative</td></tr>
+<tr><td>Source corpus</td><td>ArgumentMiningECHR</td><td>NoDE_datasets</td></tr>
+<tr><td>Annotated entities</td><td>28 (13 Context, 14 Option, 1 Marker)</td><td>74 (40 Context, 33 Option, 1 Marker)</td></tr>
 <tr><td><code>rule</code></td><td>14</td><td>20</td></tr>
 <tr><td><code>prefer</code></td><td>0</td><td>1 (E21)</td></tr>
 <tr><td><code>meta_prefer</code></td><td>0</td><td>0</td></tr>
-<tr><td>Attributs</td><td>7 Modality</td><td>8 Modality, 4 Negated</td></tr>
-<tr><td>Structure du graphe</td><td>Linéaire, déductive</td><td>Branches parallèles</td></tr>
-<tr><td>Validation humaine</td><td>Faible</td><td>Elevée</td></tr>
+<tr><td>Attributes</td><td>7 Modality</td><td>8 Modality, 4 Negated</td></tr>
+<tr><td>Graph structure</td><td>Linear, deductive</td><td>Parallel branches</td></tr>
+<tr><td>Human validation</td><td>Low</td><td>High</td></tr>
 </tbody>
 </table>
 
-**Alkasi c. Turquie :** le graphe illustre une chaîne déductive E1 -> E2 -> E3 -> E4 menant à l'admissibilité de la requête. Aucun `prefer` n'est produit, ce qui est cohérent : le texte ne contient aucun marqueur explicite de priorité entre règles concurrentes.
+**Alkasi v. Turkey:** the graph illustrates a deductive chain E1 -> E2 -> E3 -> E4 leading to the admissibility of the application. No `prefer` is produced, which is consistent: the text contains no explicit priority marker between competing rules.
 
-**Douze Hommes en Colère :** le seul `prefer` produit (E21) oppose la présomption d'innocence (E2, Winner) à une attaque sur la crédibilité (E9, Loser) via le marqueur *"you can't trust them"*. Ce résultat illustre la limite de l'automatisation : ce marqueur relève davantage d'une généralisation rhétorique que d'un marqueur de priorité canonique, et nécessite une relecture humaine.
+**Twelve Angry Men:** the single `prefer` produced (E21) opposes the presumption of innocence (E2, Winner) against a credibility attack (E9, Loser) via the marker *"you can't trust them"*. This result illustrates the limits of automation: this marker is more of a rhetorical generalization than a canonical priority marker, and requires human review.
+
+For a detailed analysis of the methodology, annotation principles and results, see the [research report](TER_Rapport.pdf).
 
 ---
 
-## 7. Documents associés
+## 7. Associated Documents
 
-| Document | Description | Statut |
-|----------|-------------|:------:|
-| `rapport.pdf` | Rapport de TER complet | A venir |
-| `presentation.pdf` | Présentation de soutenance | A venir |
+| Document | Format | Description |
+|----------|:------:|-------------|
+| [`TER_Rapport.pdf`](TER_Rapport.pdf) | PDF | Full research report: context, related work, contributions, results |
+| [`Presentation_TER.html`](Presentation_TER.html) | HTML | Defense presentation with animations and transition effects |
+| [`Presentation_TER.pdf`](Presentation_TER.pdf) | PDF | Static version of the presentation, without effects |
+
+---
+
+## 8. Main References
+
+Both foundational papers on the LPP/GORGIAS formalism used in this TER are available in the [`research_paper/`](research_paper/) folder.
+
+**[1]** Antonis C. Kakas, Pavlos Moraitis and Nikolaos I. Spanoudakis.
+*GORGIAS: Applying argumentation.*
+Argument & Computation, vol. 10, pp. 55-81, IOS Press, 2019.
+DOI: [10.3233/AAC-181006](https://doi.org/10.3233/AAC-181006)
+— Primary reference for the LPP formalism and GORGIAS implementation. Source of Definition 4 cited in the related work section.
+
+**[2]** Antonis Kakas and Pavlos Moraitis.
+*Argumentation Based Decision Making for Autonomous Agents.*
+AAMAS'03, Melbourne, Australia, 2003.
+— Presents the argumentation-based decision-making framework for autonomous agents, theoretical foundation of the LPP approach.
